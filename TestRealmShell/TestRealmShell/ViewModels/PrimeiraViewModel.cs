@@ -4,6 +4,9 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Realms;
+using Realms.Schema;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace TestRealmShell.ViewModels
 {
@@ -11,11 +14,18 @@ namespace TestRealmShell.ViewModels
     {
         public string Dados { get; set; }
         public string ParametroOrigem { get; set; }
-        public ICommand EnviarCommand => new Command(() => EnviarCommand());
+        public ICommand EnviarCommand => new Command<string>( async (route) => await Enviar(route));
 
-        private void EnviarCommand()
+        async Task Enviar(string route)
         {
-            throw new NotImplementedException();
+            var realms = Realm.GetInstance();
+            realms.Write(() => {
+                realms.Add<models.Model>(new models.Model { Prop = ParametroOrigem });
+            });
+
+            await Shell.Current.GoToAsync($"segunda?parametro={route}") ;
+
+
         }
 
     }

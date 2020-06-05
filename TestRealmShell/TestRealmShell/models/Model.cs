@@ -7,6 +7,6 @@ namespace TestRealmShell.models
 {
     public class Model : RealmObject
     {
-        public string Property { get; set; }
+        public string Prop { get; set; }
     }
 }
