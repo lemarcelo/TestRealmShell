@@ -20,10 +20,10 @@ namespace TestRealmShell.ViewModels
         {
             var realms = Realm.GetInstance();
             realms.Write(() => {
-                realms.Add<models.Model>(new models.Model { Prop = ParametroOrigem });
+                realms.Add<Models.Model>(new Models.Model { Prop = ParametroOrigem });
             });
 
-            await Shell.Current.GoToAsync($"segunda?parametro={route}") ;
+            Shell.Current.GoToAsync("segunda?entryOrigem=aa");
 
 
         }

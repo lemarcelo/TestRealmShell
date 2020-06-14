@@ -7,10 +7,7 @@
              x:Class="TestRealmShell.Views.PrimeiraView">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding Dados}" />
-            <Entry Text="{Binding ParametroOrigem}" />
-            <Button Text="Enviar" CommandParameter="segunda" Clicked="Button_Clicked"/>
-            <!--Command="{Binding EnviarCommand}"-->
+            <Button Text="Enviar" Command="{Binding EnviarCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestRealmShell.models
+namespace TestRealmShell.Models
 {
     public class Model : RealmObject
     {

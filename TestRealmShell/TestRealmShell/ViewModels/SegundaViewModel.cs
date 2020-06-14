@@ -6,27 +6,18 @@ using Xamarin.Forms;
 
 namespace TestRealmShell.ViewModels
 {
+    [QueryProperty("_TextEntryDestino", "entryOrigem")]
     public class SegundaViewModel
     {
-        private string Parametro;
-
-        public string _parametro
+        Models.Model model;
+        public string _TextEntryDestino
         {
-            get { return Parametro; }
-            set { Uri.UnescapeDataString (value); }
-        }
+            set
+            {
+                model = new Models.Model() { Prop = Uri.UnescapeDataString(value) };
+                App.Current.MainPage.DisplayAlert("", $"{model.Prop}", "Ok");
 
-        private string ParametroDestino;
-
-        public string _parametroDestino
-        {
-            get { return ParametroDestino; }
-            set { ParametroDestino = value; }
-        }
-
-        public SegundaViewModel()
-        {
-            ParametroDestino = Parametro;
+            }
         }
     }
 }
