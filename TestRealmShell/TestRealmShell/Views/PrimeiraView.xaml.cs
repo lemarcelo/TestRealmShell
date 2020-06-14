@@ -20,7 +20,7 @@ namespace TestRealmShell.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("segunda?parametro=aa");
+            Shell.Current.GoToAsync("segunda?entryOrigem=aa");
         }
     }
 }

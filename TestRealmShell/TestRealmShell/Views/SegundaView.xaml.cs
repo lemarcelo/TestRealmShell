@@ -13,13 +13,11 @@ namespace TestRealmShell.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SegundaView : ContentPage
     {
-        string a;
         public string _TextEntryDestino
         {
             set
             {
-                a = Uri.UnescapeDataString(value);
-                Lbl.Text = a;
+                App.Current.MainPage.DisplayAlert("",$"{Uri.UnescapeDataString(value)}","Ok");
             }
         }
         public SegundaView()
