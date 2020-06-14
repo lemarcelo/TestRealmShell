@@ -7,7 +7,9 @@
              x:Class="TestRealmShell.Views.SegundaView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding ParametroDestino}"
+            <Label 
+                x:Name="Lbl"
+                Text="{Binding ParametroDestino}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

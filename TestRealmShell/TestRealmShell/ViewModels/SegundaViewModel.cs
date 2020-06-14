@@ -6,7 +6,6 @@ using Xamarin.Forms;
 
 namespace TestRealmShell.ViewModels
 {
-    [QueryProperty("Parametro", "parametro")]
     public class SegundaViewModel
     {
         private string Parametro;

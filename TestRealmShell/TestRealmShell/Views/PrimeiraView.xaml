@@ -9,7 +9,8 @@
         <StackLayout>
             <Entry Text="{Binding Dados}" />
             <Entry Text="{Binding ParametroOrigem}" />
-            <Button Text="Enviar" CommandParameter="segunda" Command="{Binding EnviarCommand}"/>
+            <Button Text="Enviar" CommandParameter="segunda" Clicked="Button_Clicked"/>
+            <!--Command="{Binding EnviarCommand}"-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

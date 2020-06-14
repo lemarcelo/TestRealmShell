@@ -15,7 +15,12 @@ namespace TestRealmShell.Views
         public PrimeiraView()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.PrimeiraViewModel();
+            //BindingContext = new ViewModels.PrimeiraViewModel();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("segunda?parametro=aa");
         }
     }
 }
