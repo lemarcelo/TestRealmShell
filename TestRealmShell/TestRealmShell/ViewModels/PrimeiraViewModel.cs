@@ -7,6 +7,9 @@ using Realms;
 using Realms.Schema;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using TestRealmShell.Models;
+using System.Linq;
 
 namespace TestRealmShell.ViewModels
 {
@@ -22,8 +25,10 @@ namespace TestRealmShell.ViewModels
             realms.Write(() => {
                 realms.Add<Models.Model>(new Models.Model { Prop = ParametroOrigem });
             });
+            var parametro = realms.All<Model>().Last();
+            string joseNewton = JsonConvert.SerializeObject(parametro);
 
-            Shell.Current.GoToAsync("segunda?entryOrigem=aa");
+            await Shell.Current.GoToAsync($"segunda?entryOrigem={joseNewton}");
 
 
         }

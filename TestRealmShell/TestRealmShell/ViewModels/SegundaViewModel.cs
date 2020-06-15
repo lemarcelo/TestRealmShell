@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Realms;
 using Xamarin.Forms;
+using TestRealmShell.Models;
 
 namespace TestRealmShell.ViewModels
 {
@@ -14,8 +16,8 @@ namespace TestRealmShell.ViewModels
         {
             set
             {
-                model = new Models.Model() { Prop = Uri.UnescapeDataString(value) };
-                App.Current.MainPage.DisplayAlert("", $"{model.Prop}", "Ok");
+                var jose = JsonConvert.DeserializeObject<Model>(Uri.UnescapeDataString(value));
+                App.Current.MainPage.DisplayAlert("", $"{jose.Prop}", "Ok");
 
             }
         }
