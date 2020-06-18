@@ -16,8 +16,8 @@ namespace TestRealmShell.ViewModels
         {
             set
             {
-                var jose = JsonConvert.DeserializeObject<Model>(Uri.UnescapeDataString(value));
-                App.Current.MainPage.DisplayAlert("", $"{jose.Prop}", "Ok");
+                //var jose = JsonConvert.DeserializeObject<Model>(Uri.UnescapeDataString(value));
+                App.Current.MainPage.DisplayAlert("", $"{Uri.UnescapeDataString(value)}", "Ok");
 
             }
         }
