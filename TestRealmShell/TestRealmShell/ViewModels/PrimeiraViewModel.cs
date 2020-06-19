@@ -17,9 +17,9 @@ namespace TestRealmShell.ViewModels
     {
         public string Dados { get; set; }
         public string ParametroOrigem { get; set; }
-        public ICommand EnviarCommand => new Command<string>( (route) => Enviar(route));
+        public ICommand EnviarCommand => new Command<string>( async (route) => await Enviar(route));
 
-        void Enviar(string route)
+        async Task Enviar(string route)
         {
             var realms = Realm.GetInstance();
             realms.Write(() => {
@@ -28,7 +28,7 @@ namespace TestRealmShell.ViewModels
             var parametro = realms.All<Model>().Last();
             string joseNewton = JsonConvert.SerializeObject(parametro);
 
-            Shell.Current.GoToAsync($"segunda?entryOrigem={joseNewton}");
+            await Shell.Current.GoToAsync($"segunda?entryOrigem={joseNewton}");
 
 
         }

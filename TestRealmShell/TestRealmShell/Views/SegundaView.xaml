@@ -9,9 +9,11 @@
         <StackLayout>
             <Label 
                 x:Name="Lbl"
-                Text="{Binding ParametroDestino}"
+                Text="{Binding jose}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Visualizar Dados" Command="{Binding DadosCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
