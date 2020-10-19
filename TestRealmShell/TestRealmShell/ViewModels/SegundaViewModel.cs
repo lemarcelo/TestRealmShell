@@ -16,7 +16,7 @@ namespace TestRealmShell.ViewModels
         Realm realm = Realm.GetInstance();
         Models.Model model;
         string jose;
-        public ICommand EnviarCommand => new Command(async () => await ExibirDados());
+        public ICommand EnviarCommand => new Command(() =>  ExibirDados());
 
 
         public string _TextEntryDestino
@@ -32,11 +32,9 @@ namespace TestRealmShell.ViewModels
             }
         }
 
-
-
-        async Task ExibirDados()
+        void ExibirDados()
         {
-            await App.Current.MainPage.DisplayAlert("", $"{jose}", "Ok");
+            App.Current.MainPage.DisplayAlert("", $"{jose}", "Ok");
         }
     }
 }
